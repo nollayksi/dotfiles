@@ -1,6 +1,6 @@
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}user%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # Defaults 
 export VISUAL=nvim
@@ -36,6 +36,8 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
 bindkey "^[[3;5~" delete-word
 bindkey "^H" backward-delete-word
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # Load syntax highlighting; should be last.
-# source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source /usr/share/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
