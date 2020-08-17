@@ -1,0 +1,25 @@
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Neovim aliases
+alias \
+        vi="nvim" \
+        vim="nvim"  \
+        vimconf="nvim ~/.config/nvim/init.vim"
+
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+
+# Shortenings
+alias p="sudo pacman"
+alias ll="ls -la"
+
+
+#Reload zsh
+alias rzsh="source ~/.zshrc"
