@@ -7,6 +7,10 @@ alias \
         vim="nvim"  \
         vimconf="nvim ~/.config/nvim/init.vim"
 
+# Sudo versions also
+alias \
+        sudo vi="sudo nvim" \
+        sudo vim="sudo nvim"
 
 # Colorize commands when possible.
 alias \
