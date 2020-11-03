@@ -1,0 +1,56 @@
+NETUM VPN AUTOCONNECT SCRIPT
+
+Dependencies:
+- Python 3.? (Tested only on Python 3.8.6 but most likely will work on much lower versions)
+- pyotp (library used to calculate otp)
+- nmcli (OPTIONAL - works out of the box with but can easily be changed to use only OpenVPN by changing the netumvpn.sh script and credential file format)
+
+=======================================================
+
+Install
+
+pip install pyotp
+follow nmcli or OpenVPN instructions below
+
+Recommended: 
+create alias in shell configuration to start the connection easily (for example by typing command "netumvpn")
+
+=======================================================
+
+Add to /secret folder:
+file named vpn_secrets.txt
+
+Format for vpn_secrets.txt
+File must contain three rows in this order:
+one time password seed (scan the qr code you got for the otp)
+password for the VPN account (NAD password)
+username for VPN connection (Not needed for nmcli setup but required for the OpenVPN alternative)
+
+=======================================================
+
+Using nmcli?
+
+- import netum VPN .ovpn config file and certificated etc to Network Manager as an OpenVPN profile (can be done via Network Manager GUI)
+- save your username in the profile
+- make sure the profile is named netum_vpn (if not, you need to change the new name to the netumvpn.sh script)
+- profile name can be found with: $ nmcli c
+
+=======================================================
+
+Using OpenVPN instead of mncli?
+
+- change the password format printed by the python app:
+    credFile.write(secrets[2]"\n"+ secrets[1] + totp.now())
+
+- add the credfile to .ovpn file by adding line:
+    auth-user-pass "~/.config/scripts/netumvpn/secret/creds.txt" (to change this path also change the cred file write path to the python file..)
+
+- change the netumvpn.sh file vpn launch command:
+    sudo openvpn path/to/ovpn/config/file/netum_vpn.ovpn
+
+
+=======================================================
+
+Using Windows? 
+
+Own repository coming soon... Project is easy to modify to work with windows also by yourself
