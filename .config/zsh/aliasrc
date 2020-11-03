@@ -23,7 +23,10 @@ alias \
 # Shortenings
 alias p="sudo pacman"
 alias ll="ls -la"
+alias py="python"
 
+# Netum VPN
+alias netumvpn="sh ~/.config/scripts/netumvpn/netumvpn.sh"
 
 #Reload zsh
 alias rzsh="source ~/.zshrc"

@@ -20,8 +20,8 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 zstyle :compinstall filename '/home/vili/.zshrc'
 
 autoload -Uz compinit
-# Basic auto/tab complete:
-zstyle ':completion:*' menu select
+# Basic case-insensitive auto/tab complete:
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
@@ -38,6 +38,7 @@ bindkey "^[[3;5~" delete-word
 bindkey "^H" backward-delete-word
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+
 
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
