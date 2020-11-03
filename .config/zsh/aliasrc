@@ -26,7 +26,10 @@ alias ll="ls -la"
 alias py="python"
 
 # Netum VPN
-alias netumvpn="sh ~/.config/scripts/netumvpn/netumvpn.sh"
+alias netumvpn="sh ~/.scripts/netumvpn/netumvpn.sh"
+
+# Disable Away (for teams)
+alias disableaway="py ~/.scripts/disableAway/disableAway.py"
 
 #Reload zsh
 alias rzsh="source ~/.zshrc"

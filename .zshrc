@@ -17,11 +17,11 @@ bindkey -v
 stty stop undef		# Disable ctrl-s to freeze terminal.
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/vili/.zshrc'
+zstyle :compinstall filename '/home/vili/.zshrc' 
 
 autoload -Uz compinit
 # Basic case-insensitive auto/tab complete:
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*'  menu select matcher-list 'm:{a-z}={A-Za-z}'
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
