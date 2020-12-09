@@ -1,11 +1,15 @@
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}user%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # Defaults 
 export VISUAL=nvim
 export EDITOR=nvim
 export BROWSER=firefox
+
+# setopt no_list_ambiguous
+# setopt MENU_COMPLETE
+
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.cache/zsh/.histfile
@@ -21,7 +25,8 @@ zstyle :compinstall filename '/home/vili/.zshrc'
 
 autoload -Uz compinit
 # Basic case-insensitive auto/tab complete:
-zstyle ':completion:*'  menu select matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*'  menu select matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
